@@ -7,7 +7,7 @@ category: blog
 tag: 
     - Posgis
     - Postgres
-author: Yury Camacho
+author: camachoyury
 description: Verificar si un punto esta dentro de un poligono en postgis
   
 ---

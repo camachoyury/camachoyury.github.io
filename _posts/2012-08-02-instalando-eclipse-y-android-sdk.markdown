@@ -16,7 +16,7 @@ meta:
   _oembed_933afbc7215d50aabfb629c23af82ec7: "{{unknown}}"
   _oembed_5b436854ba39bd934de197b4d46e7cef: "{{unknown}}"
 
-author: Yury Camacho
+author: camachoyury
 description: Instalando Eclipse y Android SDK
 ---
 <p>Hace un tiempo que ando metido en esto de android..y decidí hacer una serie de post para quienes están iniciando en este maravilloso mundo.. Al empezar a desarrollar sobre cualquier tecnología siempre  es un poco complicado entender algunas cosas, pero gracias  a San Google y el internet todo resulta mas fácil, en internet existen muchos tutoriales de como instalar o configurar nuestro propio entorno de desarrollo para programar aplicaciones Android, y siempre  es mejor que sobre a que falte, por eso decidi realizar un tutorial  de como configurar nuestro entorno de desarrollo para Android.</p>
