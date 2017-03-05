@@ -1,17 +1,12 @@
 ---
-layout: post
 title: Instalacion basica de Tomcat 6 en ubuntu server 10.10
+layout: post
 date: 2011-02-24 20:16:06.000000000 -03:00
-category: Blog
-tags: 
+category: blog
+tag: 
 - Apache Tomcat
 - Ubuntu
-
-meta:
-  _edit_last: '19738260'
-  _oembed_820981ca8da5c904cc1d68c6cb69dd7a: "{{unknown}}"
-  _oembed_335fd485b6a9fa701fab1355cec85936: "{{unknown}}"
-author:Yury Camacho
+author: Yury Camacho
 description: Instalacion de Tomcat 6 en ubuntu Server
  
 ---
