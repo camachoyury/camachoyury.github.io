@@ -6,7 +6,7 @@ category: blog
 tag: 
 - Apache Tomcat
 - Ubuntu
-author: Yury Camacho
+author: camachoyury
 description: Instalacion de Tomcat 6 en ubuntu Server
  
 ---
