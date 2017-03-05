@@ -1,0 +1,61 @@
+---
+layout: post
+title: Posición actual en Android(play services location)
+date: 
+type: post
+published: false
+status: draft
+categories:
+- a bit of everything
+- Android
+- GooglePlayServices
+- Location
+tags: []
+meta:
+  _thumbnail_id: '376'
+author:
+  login: camachoyury
+  email: camachoyury@gmail.com
+  display_name: camachoyury
+  first_name: ''
+  last_name: ''
+---
+<p>Buscando en la web encontré varias formas de conseguir la posición actual en un aplicación android, pero muchas hacen algo que particularmente no me gusta, tener la lógica de ciertas cosas dentro los actividades, dado que yo considero que la forma de obtener la localización debería ser en una clase de servicio, a continuación describiré una implementación hecha mi modo, no digo que sea el mejor solo sigo que es como yo lo hago.</p>
+<p>primero es necesario agregar al Build.gradle  las librerías de localización y de mapas de android.<br />
+<code><br />
+<b><br />
+compile 'com.google.android.gms:play-services-maps:8.4.0'<br />
+compile 'com.google.android.gms:play-services-location:8.4.0'<br />
+</b></code><br />
+<code><b></b><br />
+</code></p>
+<p>lo siguiente es crear una clase llamada "LocationService" esta clase sera la que proporcionara la posición actual actual, esta clase debe ser instanciada en la actividad, aunque lo optimo seria crear en un controlador que llame al servicio y el controlador sea instaciado en la actividad, pero como es un ejemplo lo dejaremos así.</p>
+<p><code><br />
+<b>public class LocationService implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener {}</b></code></p>
+<p>Se deben implementar tres interfaces la primera es "GoogleApiClient.ConnectionCallbacks" esta interfaz ayuda a proveer de callbacks para cuando el servicio este conectado o desconectado, se deben implementar los métodos "onConnected" y "onConnectionSuspended".</p>
+<p>La segunda interfaz es "GoogleApiClient.OnConnectionFailedListener" esta interfaz permite manejar el evento cuando la conexión a las api de google falla, se debe implementar el método "onConnectionFailed".</p>
+<p>Y el ultimo es "LocationListener", esta interfaz que permite recibir eventos de cuando la posición cambia a travez del método onLocationChanged.</p>
+<p>dentro la clase se declaran unas variables de instancia que necesitaremos para que esto funcione.</p>
+<p><code><br />
+<b>private GoogleApiClient googleApiClient; </b>//Cliente de Google API que se encargara de hacernos la conexion a location playservices<br />
+<b>private LocationRequest locationRequest;</b> // Clase que permite generar las peticiones de localizacion de acuerdo a paramtros definidos<br />
+<b>private static int UPDATE_INTERVAL = 10000;</b> // intervalo de actualizacion de posicion: 10 sec<br />
+<b>private static int FATEST_INTERVAL = 5000;</b> // la variable que dara la prioridad de actualización en caso de que otra aplicación este usando el servicio de localizacion 5 sec<br />
+<b>private final static int CONNECTION_FAILURE_RESOLUTION_REQUEST = 9000;</b> el código para identificar que la conexión falló<br />
+</code><br />
+ahora se creara un metodo para crear el cliente de las apis de Google y también inicalizar el objeto LocationRequest, este método deberá ser llamada desde el método onStart() de la actividad que mostrara el punto.</p>
+<p><code><b><br />
+protected synchronized void buildGoogleApiClient() {<br />
+if (googleApiClient == null) {<br />
+googleApiClient = new GoogleApiClient.Builder(mapsActivity)</b> //construye el cliente y se le pasa el contecto de la actividad que lo llamara en este caso se llama mapsActivity<br />
+<b>.addConnectionCallbacks(this)</b>//la clase que maneja los callbacks de conexión que es la misma<br />
+<b>.addOnConnectionFailedListener(this)</b> //la clase que maja el listener de fallas que es la misma<br />
+<b>.addApi(LocationServices.API)</b> //que api usaremos con el cliente que para localización es LocationServices.API<br />
+<b>.build();<br />
+locationRequest = LocationRequest.create()</b>// Crea el objeto LocationRequest<br />
+<b>.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)</b><br />
+.setInterval(UPDATE_INTERVAL)<br />
+.setFastestInterval(5000);<br />
+}<br />
+}<br />
+</code></p>

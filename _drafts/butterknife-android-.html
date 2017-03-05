@@ -1,0 +1,58 @@
+---
+layout: post
+title: ButterKnife Android,
+date: 
+type: post
+published: false
+status: draft
+categories:
+- a bit of everything
+tags: []
+meta:
+  _edit_last: '19738260'
+author:
+  login: camachoyury
+  email: camachoyury@gmail.com
+  display_name: camachoyury
+  first_name: ''
+  last_name: ''
+---
+<p>ButterKnife es una libreria de inyeccion de vistas para android que ahorra un montón de lineas de código, y es de un fácil uso y configuración. en este post se mostrara como agregar a un proyecto y como usarlo. hace unos días atras Jakewarton creador de esta librería anunciada la salida de la nueva version que usare como ejemplo</p>
+<p>para agregar ButterKnife a un proyecto primero de debe agregar algunas lineas de configuración a Gradle<br />
+se necesita agregar a build.gradle una dependencia.<br />
+<code><br />
+dependencies {<br />
+classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'<br />
+}<br />
+</code>Luego se debe agregar en app/build.gradle<br />
+<code><br />
+apply plugin: 'android-apt'<br />
+android {<br />
+...<br />
+}<br />
+dependencies {<br />
+compile 'com.jakewharton:butterknife:8.2.1'<br />
+apt 'com.jakewharton:butterknife-compiler:8.2.1'<br />
+}<br />
+</code></p>
+<p>una vez agragradas y sincronizadas las dependencias empezamos a usar la libreria.</p>
+<p>vemamos ambos escenarios, sin y con la libreria</p>
+<p>vamos a agregar un FloatingActionButton a una activity</p>
+<p>SIN ButterKnife:</p>
+<p><code><br />
+public class MainActivity extends AppCompatActivity {</p>
+<p>   FloatingActionButton fab;</p>
+<p>    @Override<br />
+    protected void onCreate(Bundle savedInstanceState) {<br />
+        super.onCreate(savedInstanceState);<br />
+        setContentView(R.layout.activity_main);</p>
+<p>        fab = (FloatingActionButton) findViewById(R.id.fab);<br />
+        fab.setOnClickListener(new View.OnClickListener() {<br />
+            @Override<br />
+            public void onClick(View view) {<br />
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)<br />
+                        .setAction("Action", null).show();<br />
+            }<br />
+        });</p>
+<p></code></p>
+<p>ahora con ButterKnife:</p>

@@ -72,6 +72,7 @@ GEM
       octokit (~> 4.0)
       public_suffix (~> 2.0)
       typhoeus (~> 0.7)
+    hpricot (0.8.6)
     html-pipeline (2.5.0)
       activesupport (>= 2)
       nokogiri (>= 1.4)
@@ -208,6 +209,7 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
+  hpricot
   html-proofer
 
 BUNDLED WITH
