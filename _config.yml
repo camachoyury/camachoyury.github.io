@@ -98,6 +98,8 @@ show-author: true
 # do you want some animations?
 animation: true
 
+languages: ["es", "en"]
+
 gems:
   - jekyll-seo-tag
   - jekyll-gist
