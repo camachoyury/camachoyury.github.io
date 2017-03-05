@@ -4,8 +4,7 @@ layout: post
 date: 2011-02-21 00:04:38.000000000 -03:00
 category: blog
 tag: J2ME
-star: true
-author:Yury Camacho
+author: Yury Camacho
 description: Obtener el IMEI con J2ME
 ---
 
