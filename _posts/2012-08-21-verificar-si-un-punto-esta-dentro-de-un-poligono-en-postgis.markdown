@@ -1,18 +1,14 @@
 ---
-layout: post
 title: Verificar si un punto esta dentro de un poligono en postgis
+layout: post
 date: 2012-08-21 10:03:43.000000000 -03:00
 headerImage: false
-published: true
-status: publish
 category: blog
 tag: 
-- Posgis
-- Postgres
-meta:
-  _edit_last: '19738260'
+    - Posgis
+    - Postgres
 author: Yury Camacho
-  description: Verificar si un punto esta dentro de un poligono en postgis
+description: Verificar si un punto esta dentro de un poligono en postgis
   
 ---
 <p>Si Postgis no existiera esto seria un poco complicado,  ok.. la tarea es la siguiente en mi base de datos tengo unas cercas que no son mas que unos poligonos, y necesitaba saber si el punto que lanzaba desde un gps al sevidor  esta dentro de el poligono o fuera, Postgis nos da una funcion llamanda <a title="ST_Contains" href="http://postgis.refractions.net/documentation/manual-1.4/ST_Contains.html" target="_blank">ST_CONTAINS</a>  que nos permite ver si un punto esta dentro de un poligono, esta funcion recibe dos parametros que son del tipo GEOMETRY :</p>
