@@ -1,8 +1,7 @@
 ---
-layout: post
 title: "Instalando Eclipse y Android SDK"
+layout: post
 date: 2012-08-02 22:02:44.000000000 -03:00
-type: post
 category: blog
 tag:
 - eclipse
@@ -16,8 +15,9 @@ meta:
   _oembed_b3977bcc2654a52255b3f2cd1f74c037: "{{unknown}}"
   _oembed_933afbc7215d50aabfb629c23af82ec7: "{{unknown}}"
   _oembed_5b436854ba39bd934de197b4d46e7cef: "{{unknown}}"
+
 author: Yury Camacho
-  description: Instalando Eclipse y Android SDK
+description: Instalando Eclipse y Android SDK
 ---
 <p>Hace un tiempo que ando metido en esto de android..y decidí hacer una serie de post para quienes están iniciando en este maravilloso mundo.. Al empezar a desarrollar sobre cualquier tecnología siempre  es un poco complicado entender algunas cosas, pero gracias  a San Google y el internet todo resulta mas fácil, en internet existen muchos tutoriales de como instalar o configurar nuestro propio entorno de desarrollo para programar aplicaciones Android, y siempre  es mejor que sobre a que falte, por eso decidi realizar un tutorial  de como configurar nuestro entorno de desarrollo para Android.</p>
 <p>Nota: el tutorial esta bajo  el sistema operativo Windows 7..pese que yo utilizo una mac  ;)</p>
